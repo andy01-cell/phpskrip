@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 function handleUpload() {
     $inputFilePath = $_FILES['image']['tmp_name'];
-    $outputFilePath = 'D:/skripsi/hasil/output/output1.png';
+    $outputFilePath = 'output_bg.png';
 
     $inputImage = loadImage($inputFilePath);
     if ($inputImage === false) {
