@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 function handleUpload() {
     $inputFilePath = $_FILES['image']['tmp_name'];
-    $outputFilePath = 'output_bg.png';
+    $outputFilePath = 'output/output_bg.png';
 
     $inputImage = loadImage($inputFilePath);
     if ($inputImage === false) {
@@ -40,7 +40,7 @@ function handleUpload() {
 
 function handleUploadNoise() {
     $inputFilePath = $_FILES['image']['tmp_name'];
-    $outputFilePath = 'output_noise.jpg';
+    $outputFilePath = 'output/output_noise.jpg';
 
     $inputImage = loadImage($inputFilePath);
     if ($inputImage === false) {
