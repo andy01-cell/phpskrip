@@ -40,7 +40,7 @@ function handleUpload() {
 
 function handleUploadNoise() {
     $inputFilePath = $_FILES['image']['tmp_name'];
-    $outputFilePath = 'D:/skripsi/hasil/output/output_noise.jpg';
+    $outputFilePath = 'output_noise.jpg';
 
     $inputImage = loadImage($inputFilePath);
     if ($inputImage === false) {
