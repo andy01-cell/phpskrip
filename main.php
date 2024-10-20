@@ -28,7 +28,10 @@ function handleUpload() {
     }
 
     $outputImage = removeBackground($inputImage);
-
+    header('Content-Type: image/png');
+    imagepng($outputImage);
+    
+    
     $result = saveImage($outputImage, $outputFilePath);
     if ($result === false) {
         echo json_encode(['error' => 'Error saving image']);
@@ -36,6 +39,9 @@ function handleUpload() {
     }
 
     echo json_encode(['message' => 'Background removal completed', 'output' => $outputFilePath]);
+    
+    // exit;
+    
 }
 
 function handleUploadNoise() {
@@ -49,6 +55,8 @@ function handleUploadNoise() {
     }
 
     $outputImage = removeNoise($inputImage);
+    header('Content-Type: image/png');
+    imagepng($outputImage);
 
     $result = saveImage($outputImage, $outputFilePath);
     if ($result === false) {
