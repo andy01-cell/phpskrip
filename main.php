@@ -6,9 +6,9 @@ define('KERNEL_SIZE', 3);
 $requestUri = $_SERVER['REQUEST_URI'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (preg_match('//phpbg$/', $requestUri) && isset($_FILES['image'])) {
+    if (preg_match('/phpbg$/', $requestUri) && isset($_FILES['image'])) {
         handleUpload();
-    } elseif (preg_match('//phpnoise$/', $requestUri) && isset($_FILES['image'])) {
+    } elseif (preg_match('/phpnoise$/', $requestUri) && isset($_FILES['image'])) {
         handleUploadNoise();
     } else {
         echo json_encode(['error' => 'Invalid request']);
